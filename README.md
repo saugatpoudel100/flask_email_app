@@ -1,48 +1,35 @@
-# 📧 Secure Flask Gmail SMTP Email Sender
+# 📧 Flask Email Sender via Gmail SMTP
 
-A Flask-based web app to send emails using **multiple Gmail SMTP accounts** with:
+A secure Flask web app for sending emails using **multiple Gmail SMTP accounts** with features like:
 
-✅ HTML content  
-✅ Multiple recipients  
-✅ File attachments  
-✅ Sender account selection  
-✅ IP whitelist protection  
-✅ `.env`-based environment configuration  
-✅ UTF-8 logging to `mail_log.txt`
-
----
-
-## 🚀 Features
-
-- Send emails using Gmail SMTP
-- Choose from multiple Gmail accounts (e.g., `gmail1`, `gmail2`)
-- Attach one or more files
-- Send to multiple recipients (comma-separated)
-- Protect access using IP whitelisting
-- Uses environment variables via `.env` for credentials and config
-- Logs success/failure with timestamps in `mail_log.txt`
+- ✅ HTML email support  
+- ✅ Multiple recipients  
+- ✅ File attachments  
+- ✅ Sender account selection  
+- ✅ IP whitelist protection  
+- ✅ `.env` configuration  
+- ✅ UTF-8 encoded logging
 
 ---
 
-## 🛠️ Setup Instructions
-
-### 1. Clone the repository
+## 🚀 Clone the Repository
 
 ```bash
 git clone https://github.com/saugatpoudel100/flask-email-sender.git
 cd flask-email-sender
-2. Create virtual environment
+🛠️ Setup Instructions
+1. Create Virtual Environment
 bash
 Copy code
 python -m venv venv
-source venv/bin/activate      # For Mac/Linux
-venv\Scripts\activate         # For Windows
-3. Install dependencies
+source venv/bin/activate      # On Mac/Linux
+venv\Scripts\activate         # On Windows
+2. Install Dependencies
 bash
 Copy code
 pip install -r requirements.txt
-4. Configure .env
-Create a .env file in the root directory:
+3. Configure .env
+Create a .env file in the root directory with the following content:
 
 env
 Copy code
@@ -54,16 +41,18 @@ GMAIL1_PASSWORD=your_app_password1
 
 GMAIL2_EMAIL=yourgmail2@gmail.com
 GMAIL2_PASSWORD=your_app_password2
-⚠️ Make sure to enable 2-Step Verification and create an App Password for Gmail.
+⚠️ Important:
+You must enable 2-Step Verification on your Gmail accounts and generate App Passwords to use instead of your Gmail password.
 
 🔐 IP Whitelist Security
-Only requests from IPs listed in ALLOWED_IPS (comma-separated) will be allowed to access the app.
+Only users from IPs listed in the ALLOWED_IPS variable (comma-separated) in the .env file can access the app.
 
 ▶️ Running the App
 bash
 Copy code
 python app.py
-Visit: http://127.0.0.1:5000
+Open in your browser:
+http://127.0.0.1:5000
 
 📂 File Structure
 bash
@@ -78,22 +67,20 @@ Copy code
 │   └── email_utils.py
 └── mail_log.txt         # auto-created when emails are sent
 📤 Log Output Example
-Logs are stored in mail_log.txt with timestamps:
+Logs are written to mail_log.txt:
 
 vbnet
 Copy code
 2025-07-15 10:32:23 - ✅ Email sent successfully from yourgmail1@gmail.com to ['test@example.com']
 2025-07-15 10:35:12 - ❌ Failed to send email from yourgmail2@gmail.com to ['xyz@abc.com']: SMTPAuthenticationError...
-🧪 Testing
-To test locally:
+🧪 Testing Checklist
+✅ Use real Gmail accounts with App Passwords
 
-Use real Gmail accounts with App Passwords.
+✅ Access only from allowed IPs (ALLOWED_IPS in .env)
 
-Access only from IPs listed in .env.
+✅ Check your inbox & spam folder
 
-Check your inbox & spam folder.
-
-View mail_log.txt for results.
+✅ Review mail_log.txt for logs
 
 🧰 Tech Stack
 Python 3.7+
@@ -102,15 +89,13 @@ Flask
 
 Gmail SMTP (smtp.gmail.com)
 
-MIME for email formatting
+MIME (for HTML and attachments)
 
-dotenv for config management
+python-dotenv for environment variable loading
 
 📎 License
 MIT License
 
 👨‍💻 Author
-Built by [ Saugat]
+Built by Saugat Poudel
 Feel free to contribute, fork, or suggest improvements!
-
-
