@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email</title>
+</head>
+<body>
+    <h2>Send Email via Gmail SMTP</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>From:
+            <select name="sender">
+                <option value="gmail1">Gmail 1</option>
+                <option value="gmail2">Gmail 2</option>
+            </select>
+        </label><br><br>
+
+        <label>To (comma-separated emails): <input type="text" name="recipients" required></label><br><br>
+
+        <label>Subject: <input type="text" name="subject" required></label><br><br>
+
+        <label>Message (HTML allowed):<br>
+            <textarea name="html_body" rows="10" cols="50" required></textarea>
+        </label><br><br>
+
+        <label>Attachments: <input type="file" name="attachments" multiple></label><br><br>
+
+        <button type="submit">Send Email</button>
+    </form>
+</body>
+</html>
