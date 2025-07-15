@@ -19,17 +19,19 @@ Open your terminal and run:
 ```bash
 git clone https://github.com/saugatpoudel100/flask-email-sender.git
 cd flask-email-sender
-🛠️ Setup Instructions
+```
+
+## 🛠️ Setup Instructions
 1. Create Virtual Environment
 Run the following commands depending on your OS:
 
-bash
+```bash
 Copy code
 python -m venv venv
 Activate virtual environment:
 
 On Mac/Linux:
-
+```
 bash
 Copy code
 source venv/bin/activate
